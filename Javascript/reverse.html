@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+    </head>
+    <body>
+        <script>
+            function reverseWords(sentence) {
+  var words = [];
+  var currentWord = "";
+
+  for (var i = 0; i < sentence.length; i++) {
+    var char = sentence[i];
+    if (char === " ") {
+      words.push(reverse(currentWord));
+      currentWord = "";
+    } else {
+      currentWord += char;
+    }
+  }
+  
+  words.push(reverse(currentWord));
+
+  function reverse(word) {
+    var reversedWord = "";
+    for (var j = word.length - 1; j >= 0; j--) {
+      reversedWord += word[j];
+    }
+    return reversedWord;
+  }
+
+  return words.join(" ");
+}
+
+var sentence = "This is a sunny day";
+revWord = reverseWords(sentence);
+console.log(revWord);
+
+        </script>
+        <script src="" async defer></script>
+    </body>
+</html>
